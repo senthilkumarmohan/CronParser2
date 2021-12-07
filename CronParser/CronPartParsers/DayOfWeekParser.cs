@@ -1,4 +1,5 @@
-﻿using CronParser.Interfaces;
+﻿using CronParser.Enums;
+using CronParser.Interfaces;
 
 namespace CronParser.CronPartParsers
 {
@@ -8,5 +9,7 @@ namespace CronParser.CronPartParsers
             : base(0, 6, Vars.RegX.DayOfWeek, cronPartValueParserFactory)
         {
         }
+
+        public override CronPartType PartType => CronPartType.DayOfWeek;
     }
 }

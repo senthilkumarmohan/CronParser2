@@ -1,4 +1,5 @@
-﻿using CronParser.Interfaces;
+﻿using CronParser.Enums;
+using CronParser.Interfaces;
 
 namespace CronParser.CronPartParsers
 {
@@ -6,5 +7,7 @@ namespace CronParser.CronPartParsers
     {
         public MonthParser(ICronPartValueParserFactory cronPartValueParserFactory)
             : base(1, 12, Vars.RegX.Month, cronPartValueParserFactory) { }
+
+        public override CronPartType PartType => CronPartType.Month;
     }
 }

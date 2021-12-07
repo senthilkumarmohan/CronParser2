@@ -1,9 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using CronParser.Enums;
+using System.Collections.Generic;
 
 namespace CronParser.Interfaces
 {
     public interface ICronPartParser
     {
+        CronPartType PartType { get; }
         int Minimum { get; }
         int Maximum { get; }
         string ValidationRegEx { get; }

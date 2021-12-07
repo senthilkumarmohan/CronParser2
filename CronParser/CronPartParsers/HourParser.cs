@@ -1,4 +1,5 @@
-﻿using CronParser.Interfaces;
+﻿using CronParser.Enums;
+using CronParser.Interfaces;
 
 namespace CronParser.CronPartParsers
 {
@@ -6,5 +7,7 @@ namespace CronParser.CronPartParsers
     {
         public HourParser(ICronPartValueParserFactory cronPartValueParserFactory)
             : base(0, 23, Vars.RegX.Hour, cronPartValueParserFactory) { }
+
+        public override CronPartType PartType => CronPartType.Hour;
     }
 }

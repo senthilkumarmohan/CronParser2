@@ -4,7 +4,7 @@ namespace CronParser.Interfaces
 {
     public interface ICronPartValueParserFactory
     {
-        ICronPartValueParser GetCronPartValueParser(string cronPart);
-        ICronPartValueParser GetCronPartValueParser(CronPartValueType cronPartValueType);
+        ICronPartValueParser GetCronPartValueParser(string cronPart, CronPartType cronPartType);
+        ICronPartValueParser GetCronPartValueParser(CronPartValueType cronPartValueType, CronPartType cronPartType);
     }
 }

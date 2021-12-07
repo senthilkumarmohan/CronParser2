@@ -1,4 +1,5 @@
 ﻿using CronParser.CronPartValueParsers;
+using CronParser.Enums;
 using NUnit.Framework;
 using System;
 
@@ -12,7 +13,7 @@ namespace CronParser.Tests
         {
             var cronPartValueParserFactory = new CronPartValueParserFactory();
             Assert.Throws(typeof(NotImplementedException),
-                () => { cronPartValueParserFactory.GetCronPartValueParser((Enums.CronPartValueType)13); });
+                () => { cronPartValueParserFactory.GetCronPartValueParser((Enums.CronPartValueType)13, CronPartType.Hour); });
         }
     }
 }

@@ -6,13 +6,13 @@ namespace CronParser.CronPartValueParsers
 {
     public class CronPartValueParserFactory : ICronPartValueParserFactory
     {
-        public ICronPartValueParser GetCronPartValueParser(string cronPart)
+        public ICronPartValueParser GetCronPartValueParser(string cronPart, CronPartType cronPartType)
         {
-            var cronPartValueType = cronPart.GetCronPartValueType();
-            return GetCronPartValueParser(cronPartValueType);
+            var cronPartValueType = cronPart.GetCronPartValueType(cronPartType);
+            return GetCronPartValueParser(cronPartValueType, cronPartType);
         }
 
-        public ICronPartValueParser GetCronPartValueParser(CronPartValueType cronPartValueType)
+        public ICronPartValueParser GetCronPartValueParser(CronPartValueType cronPartValueType, CronPartType cronPartType)
         {
             switch (cronPartValueType)
             {
@@ -22,6 +22,8 @@ namespace CronParser.CronPartValueParsers
                     return new ListValueParser();
                 case CronPartValueType.Range:
                     return new RangeValueParser();
+                case CronPartValueType.OverLappingRange:
+                    return new OverlappingRangeValueParser();
                 case CronPartValueType.MultiRange:
                     return new MultiRangeValueParser();
                 case CronPartValueType.RangeWithStep:

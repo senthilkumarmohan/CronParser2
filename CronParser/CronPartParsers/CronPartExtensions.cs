@@ -6,7 +6,7 @@ namespace CronParser
 {
     public static class CronPartExtensions
     {
-        public static CronPartValueType GetCronPartValueType(this string cronPart)
+        public static CronPartValueType GetCronPartValueType(this string cronPart, CronPartType cronPartType)
         {
             if (Regex.IsMatch(cronPart, Vars.RegX.Constant))
             {
@@ -18,6 +18,18 @@ namespace CronParser
             }
             if (Regex.IsMatch(cronPart, Vars.RegX.Range))
             {
+                if(cronPartType == CronPartType.DayOfWeek)
+                {
+                    var isOverLappingRange = IsOverLappingRange(cronPart);
+                    if (isOverLappingRange)
+                    {
+                        return CronPartValueType.OverLappingRange;
+                    }
+                    else
+                    {
+                        return CronPartValueType.Range;
+                    }
+                }
                 return CronPartValueType.Range;
             }
             if (Regex.IsMatch(cronPart, Vars.RegX.RangeWithStep))
@@ -38,6 +50,15 @@ namespace CronParser
             }
 
             throw new NotImplementedException("Unknown cron part value type");
+        }
+
+        private static bool IsOverLappingRange(string cronPart)
+        {
+            var parts = cronPart.Split('-');
+            var start = int.Parse(parts[0]);
+            var end = int.Parse(parts[1]);
+            var isOverLappingRange = start > end;
+            return isOverLappingRange;
         }
     }
 }

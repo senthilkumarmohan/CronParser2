@@ -5,6 +5,7 @@
         Constant = 1,
         List,
         Range,
+        OverLappingRange,
         MultiRange,
         RangeWithStep,
         Wildcard,

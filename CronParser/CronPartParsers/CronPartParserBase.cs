@@ -1,4 +1,5 @@
-﻿using CronParser.Interfaces;
+﻿using CronParser.Enums;
+using CronParser.Interfaces;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
@@ -14,6 +15,8 @@ namespace CronParser.CronPartParsers
 
         public string ValidationRegEx { get; }
 
+        public abstract CronPartType PartType { get; }
+
         public CronPartParserBase(int min, int max, string validationRegEx,
             ICronPartValueParserFactory cronPartValueParserFactory)
         {
@@ -28,7 +31,7 @@ namespace CronParser.CronPartParsers
             var isValid = Regex.IsMatch(cronPart, ValidationRegEx);
             if (isValid)
             {
-                var cronPartValueParser = _cronPartValueParserFactory.GetCronPartValueParser(cronPart);
+                var cronPartValueParser = _cronPartValueParserFactory.GetCronPartValueParser(cronPart, PartType);
                 isValid = isValid && cronPartValueParser.IsValid(cronPart, Minimum, Maximum);
             }
             return isValid;
@@ -36,7 +39,7 @@ namespace CronParser.CronPartParsers
 
         public List<int> GetPossibleValues(string cronPart)
         {
-            var cronPartValueParser = _cronPartValueParserFactory.GetCronPartValueParser(cronPart);
+            var cronPartValueParser = _cronPartValueParserFactory.GetCronPartValueParser(cronPart, PartType);
             return cronPartValueParser.GenerateValues(cronPart, Minimum, Maximum);
         }
     }
