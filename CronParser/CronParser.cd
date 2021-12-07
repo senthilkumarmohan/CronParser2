@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CronParser.CronParserBase" Collapsed="true">
+    <Position X="2.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAgAAAAgAAACJAAAAgAAIAACAAAAAAAAAAACAAIAAA=</HashCode>
+      <FileName>CronParsers\CronParserBase.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="MinuteCronPartParser" />
+      <Field Name="HourCronPartParser" />
+      <Field Name="DayOfMonthCronPartParser" />
+      <Field Name="MonthCronPartParser" />
+      <Field Name="DayOfWeekCronPartParser" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CronParser.UnixCronParser">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <InheritanceLine Type="CronParser.CronParserBase" FixedFromPoint="true">
+      <Path>
+        <Point X="2.25" Y="2" />
+        <Point X="1.25" Y="2" />
+        <Point X="1.25" Y="3.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAACAAAAAgAAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CronParsers\UnixCronParser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CronParser.CronPartParsers.CronPartParserBase" Collapsed="true">
+    <Position X="12.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAACAAAAAAAAgAAgAAAAAAAAAAAAAAAAAAAABIAA=</HashCode>
+      <FileName>CronPartParsers\CronPartParserBase.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_cronPartValueParserFactory" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CronParser.CronPartParsers.DayOfMonthParser" Collapsed="true">
+    <Position X="10" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CronPartParsers\DayOfMonthParser.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CronParser.CronPartParsers.DayOfWeekParser" Collapsed="true">
+    <Position X="14.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CronPartParsers\DayOfWeekParser.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CronParser.CronPartParsers.HourParser" Collapsed="true">
+    <Position X="7.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CronPartParsers\HourParser.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CronParser.CronPartParsers.MinuteParser" Collapsed="true">
+    <Position X="12.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CronPartParsers\MinuteParser.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CronParser.CronPartParsers.MonthParser" Collapsed="true">
+    <Position X="16.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CronPartParsers\MonthParser.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CronParser.CronPartValueParsers.ConstantValueParser" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="19.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CronPartValueParsers\ConstantValueParser.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="CronParser.CronPartValueParsers.ListValueParser" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="21" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CronPartValueParsers\ListValueParser.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="CronParser.CronPartValueParsers.MultiRangeValueParser" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="22.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CronPartValueParsers\MultiRangeValueParser.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="CronParser.CronPartValueParsers.RangeValueParser" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="19.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CronPartValueParsers\RangeValueParser.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="CronParser.CronPartValueParsers.RangeWithStepValueParser" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="21" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CronPartValueParsers\RangeWithStepValueParser.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="CronParser.CronPartValueParsers.WildcardValueParser" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="22.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CronPartValueParsers\WildcardValueParser.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="CronParser.CronPartValueParsers.WildcardWithStepValueParser" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="19.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CronPartValueParsers\WildcardWithStepValueParser.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="CronParser.Interfaces.ICronPartValueParserFactory" Collapsed="true">
+    <Position X="15.75" Y="5.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\ICronPartValueGeneratorFactory.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CronParser.Interfaces.IDayOfMonthParser" Collapsed="true">
+    <Position X="4.75" Y="5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IDayOfMonthParser.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CronParser.Interfaces.IDayOfWeekParser" Collapsed="true">
+    <Position X="4.75" Y="7" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IDayOfWeekParser.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CronParser.Interfaces.IHourParser" Collapsed="true">
+    <Position X="4.75" Y="4" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IHourParser.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CronParser.Interfaces.IMinuteParser" Collapsed="true">
+    <Position X="4.75" Y="3" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IMinuteParser.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CronParser.Interfaces.IMonthParser" Collapsed="true">
+    <Position X="4.75" Y="6" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IMonthParser.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
